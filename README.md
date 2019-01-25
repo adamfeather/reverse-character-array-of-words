@@ -12,7 +12,7 @@ should be reversed to:
 
 `{'t','h','e',' ','q','u','i','c','k',' ','b','r','o','w','n',' ','f','o','x'}`
 
-The arbitray restrictions placed on this task are:
+The arbitrary restrictions placed on this task are:
 
 - No new arrays can be created
 - A single character variable can be used to temporarily store characters
