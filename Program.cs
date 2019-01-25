@@ -9,18 +9,21 @@ namespace ReverseWords
         {
             var array = new[] { 'p', 'e', 'r', 'f', 'e', 'c', 't', ' ', 'm', 'a', 'k', 'e', 's', ' ', 'p', 'r', 'a', 'c', 't', 'i', 'c', 'e', ' ', 'o', 'f', ' ', 'l', 'o', 't', ' ', 'a' };
 
-            ReverseArray(array, 0, array.Length - 1);
-
             Console.WriteLine(new string(array));
 
-            var wordBoundaries = GetWordBoundaries(array);
+            ReverseWordsInCharacterArray(array);
 
-            foreach (var wordBoundary in wordBoundaries)
+            Console.WriteLine(new string(array));
+        }
+
+        private static void ReverseWordsInCharacterArray(char[] array)
+        {
+            ReverseCharacterBetwenIndexes(array, 0, array.Length - 1);
+
+            foreach (var wordBoundary in GetWordBoundaries(array))
             {
-                ReverseArray(array, wordBoundary.startOfWord, wordBoundary.endOfWord);
+                ReverseCharacterBetwenIndexes(array, wordBoundary.startOfWord, wordBoundary.endOfWord);
             }
-
-            Console.WriteLine(new string(array));
         }
 
         private static IEnumerable<(int startOfWord, int endOfWord)> GetWordBoundaries(char[] array)
@@ -39,7 +42,7 @@ namespace ReverseWords
             yield return (startOfWord, array.Length - 1);
         }
 
-        private static void ReverseArray(char[] array, int startIndex, int endIndex)
+        private static void ReverseCharacterBetwenIndexes(char[] array, int startIndex, int endIndex)
         {
             int midpoint = (int)Math.Ceiling(((decimal)startIndex + (decimal)endIndex) / 2);
 
