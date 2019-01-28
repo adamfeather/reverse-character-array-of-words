@@ -14,6 +14,10 @@ should be reversed to:
 
 The arbitrary restrictions placed on this task are:
 
-- No new arrays can be created
+- The reordering need to be done in place, i.e. no new arrays can be created
 - A single character variable can be used to temporarily store characters
 - No LINQ
+
+Without the restrictions a solution is fairly trivial:
+
+`var reversedWords = string.Join(' ', new string(array).Split(' ').Reverse()).ToCharArray();`
