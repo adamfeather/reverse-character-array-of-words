@@ -18,11 +18,11 @@ namespace ReverseWords
 
         private static void ReverseWordsInCharacterArray(char[] array)
         {
-            ReverseCharacterBetwenIndexes(array, 0, array.Length - 1);
+            ReverseCharacterBetweenIndexes(array, 0, array.Length - 1);
 
             foreach (var wordBoundary in GetWordBoundaries(array))
             {
-                ReverseCharacterBetwenIndexes(array, wordBoundary.startOfWord, wordBoundary.endOfWord);
+                ReverseCharacterBetweenIndexes(array, wordBoundary.startOfWord, wordBoundary.endOfWord);
             }
         }
 
@@ -42,7 +42,7 @@ namespace ReverseWords
             yield return (startOfWord, array.Length - 1);
         }
 
-        private static void ReverseCharacterBetwenIndexes(char[] array, int startIndex, int endIndex)
+        private static void ReverseCharacterBetweenIndexes(char[] array, int startIndex, int endIndex)
         {
             int midpoint = (int)Math.Ceiling(((decimal)startIndex + (decimal)endIndex) / 2);
 
